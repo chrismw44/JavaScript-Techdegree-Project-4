@@ -14,13 +14,12 @@ class Game {
   */
   createPhrases() {
     const phrases = [
-      new Phrase('The lead car is unique except for the one behind which is identical'),
-      new Phrase('There is nothing wrong with the car except that it is on fire'),
-      new Phrase('And now excuse me while I interrupt myself'),
-      new Phrase('This will be Williams first win since the last time a Williams won'),
-      new Phrase('And the first five places are filled by five different cars')
+      new Phrase('Professor Brian Cox'),
+      new Phrase('Sir David Attenborough'),
+      new Phrase('Chris Packham'),
+      new Phrase('Charles Darwin'),
+      new Phrase('Steve Irwin')
     ];
-
     return phrases;
   }
 
@@ -30,14 +29,26 @@ class Game {
   }
 
   startGame() {
+    this.resetGame();
     const overlay = document.getElementById('overlay').style.display = 'none';
     const randomPhrase = game.getRandomPhrase();
     randomPhrase.addPhraseToDisplay();
     this.activePhrase = randomPhrase;
   }
 
-  handleInteraction() {
-
+  handleInteraction(button) {
+    button.disabled = true;
+    const letter = button.textContent;
+    if(this.activePhrase.checkLetter(letter) === false) {
+      button.className = 'key wrong';
+      this.removeLife();
+    } else {
+      button.className = 'key chosen';
+      this.activePhrase.showMatchedLetter(letter);
+      if(this.checkForWin()) {
+        this.gameOver(true);
+      }
+    }
   }
 
   removeLife() {
@@ -75,5 +86,22 @@ class Game {
       overlay.className = 'lose';
     }
     overlay.style.display = 'block';
+  }
+
+  resetGame() {
+    const ul = document.getElementById('phrase').firstElementChild;
+    while(ul.firstElementChild) {
+      ul.removeChild(ul.firstElementChild);
+    }
+    const letters = document.querySelectorAll('.key');
+    for (let i = 0; i < letters.length; i++) {
+      letters[i].className = 'key';
+      letters[i].disabled = false;
+    }
+    const lives = document.querySelectorAll('.tries');
+    for (let i = 0; i < lives.length; i++) {
+      lives[i].firstElementChild.setAttribute('src', 'images/liveHeart.png');
+    }
+    this.missed = 0;
   }
 }

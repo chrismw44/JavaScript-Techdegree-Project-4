@@ -5,6 +5,12 @@
 let game;
 
 document.getElementById('btn__reset').addEventListener('click', () => {
- game = new Game();
- game.startGame();
+  game = new Game();
+  game.startGame();
+});
+
+document.getElementById('qwerty').addEventListener('click', (e) => {
+  if(e.target.className === 'key') {
+    game.handleInteraction(e.target);    
+  }
 });
