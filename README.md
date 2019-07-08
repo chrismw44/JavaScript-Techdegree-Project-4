@@ -1,6 +1,6 @@
 # JavaScript-Techdegree-Project-4
 
-A browser-based, word guessing game. JavaScript and OOP (Object-Oriented Programming) select a random, hidden phrase, which a player tries to guess, by clicking letters on an onscreen keyboard.
+Browser-based, word guessing game. JavaScript and OOP (Object-Oriented Programming) select a random, hidden phrase, which a player tries to guess, by clicking letters on an onscreen keyboard.
 
 The code chooses a random phrase, splits the phrase into letters, and puts those letters onto the gameboard.
 
