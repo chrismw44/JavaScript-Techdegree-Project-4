@@ -40,6 +40,7 @@ h2 {
   text-transform: uppercase;
   font-size: var(--font-size-large);
   margin: 0;
+  text-shadow: 5px 8px 10px #222;
 }
 
 h1 {
@@ -72,6 +73,11 @@ button {
   height: 100%;
   max-height: 900px;
   text-align: center;
+  background-color: #fff;
+  background-image: url('../images/nature.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .section {
@@ -85,8 +91,10 @@ button {
 
 /* Title */
 
+
 .header {
-  color: #3a3f58;
+  color: #fff;
+
 }
 
 
@@ -110,8 +118,8 @@ button {
 
 
 .show {
-  color: #fff;
-  background-color: #4ac0d5;
+  color: #222;
+  background-color: #fff;
   font-size: 20px;
   height: 65px;
   width: 65px;
@@ -167,6 +175,7 @@ button {
   flex-direction: column;
   position: fixed;
   color: #FFFFFF;
+  background-color: #fff;
   justify-content: center;
   top: 0;
   bottom: 0;
@@ -180,7 +189,11 @@ button {
 }
 
 .start {
-  background-color: #3a3f58;
+  background-color: #fff;
+  background-image: url('../images/kingfisher.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .start a {
@@ -188,7 +201,11 @@ button {
 }
 
 .win {
-  background-color: var(--color-win);
+  background-color: #fff;
+  background-image: url('../images/dragonfly.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .win a {
@@ -196,7 +213,11 @@ button {
 }
 
 .lose {
-  background-color: #f5785f;
+  background-color: #fff;
+  background-image: url('../images/dunnock.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .lose a {
